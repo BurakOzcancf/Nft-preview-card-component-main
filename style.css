@@ -1,0 +1,146 @@
+:root {
+  --softBlue: hsl(215, 51%, 70%);
+  --cyan: hsla(178, 100%, 50%);
+  --cyanBG: hsla(178, 100%, 50%, 0.5);
+
+  --veryDarkBlueBodyBG: hsl(217, 54%, 11%);
+  --veryDarkBlueMainBG: hsl(216, 50%, 16%);
+  --veryDarkBlueLine: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit";
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--veryDarkBlueBodyBG);
+}
+main {
+  width: 330px;
+  padding: 1.5em;
+  margin: 2em;
+  background-color: var(--veryDarkBlueMainBG);
+  border-radius: 1em;
+}
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+main .photo {
+  cursor: pointer;
+}
+main .photo img {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  border-radius: 0.5em;
+}
+main .photo::before {
+  content: url(./images/icon-view.svg);
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 282px;
+  height: 282px;
+  position: absolute;
+  background-color: var(--cyanBG);
+  opacity: 0;
+  transition: 1s;
+}
+main .photo:hover::before {
+  opacity: 1;
+}
+
+main .title {
+  cursor: pointer;
+  color: var(--white);
+  margin: 1em 0;
+  transition: 0.5s;
+}
+main .title:hover {
+  color: var(--cyan);
+}
+main .description {
+  color: var(--softBlue);
+  margin: 1em 0;
+  font-weight: 400;
+}
+main .eth {
+  cursor: pointer;
+  text-align: center;
+  margin: 1em 0;
+  display: flex;
+  justify-content: space-between;
+}
+main .eth .eth-amount {
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+}
+main .eth .eth-amount img {
+  display: block;
+  margin: 0 0.3em 0 0;
+}
+main .eth .eth-time {
+  color: var(--softBlue);
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  font-size: medium;
+}
+main .eth .eth-time img {
+  display: block;
+  margin: 0 0.3em;
+}
+main .line {
+  height: 1px;
+  background-color: var(--veryDarkBlueLine);
+}
+main .creator {
+  cursor: pointer;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  color: var(--softBlue);
+}
+main .creator img {
+  margin-right: 1em;
+  box-shadow: 0em 0em 0em 1px var(--white);
+  border-radius: 50%;
+  width: 2em;
+}
+main .creator .creator-name span {
+  color: var(--white);
+  transition: 0.5s;
+}
+main .creator .creator-name span:hover {
+  color: var(--cyan);
+}
+footer {
+  font-size: 1em;
+  text-align: center;
+  color: var(--white);
+}
+footer a {
+  color: var(--white);
+  text-decoration: none;
+}
